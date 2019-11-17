@@ -60,10 +60,12 @@ Transposed Convolutions help in upsampling the previous layer to a higher resolu
 Skip Connections are used to explicitly copy features from earlier layers into later layers. This prevents neural networks from having to learn identity functions if necessary. Usually, some information is captured in the initial layers and is required for reconstruction during the up-sampling done using the fully connected network layer. If we would not have used the skip architecture that information would have been lost (or should say would have turned too abstract for it to be used further). So an information that we have in the primary layers can be fed explicitly to the later layers using the skip architecture. The Vanishing Gradient problem occurs when the signal parsing of SGD (Stochastic Gradient Descent) or other forms of GD (Gradient Descent) becomes so small or the signal becomes so approximative small that the loss is neglected. skip architecture is a common solution to overcome it.
  </p>
 
-![image](https://user-images.githubusercontent.com/37708330/69010415-e19e1c00-095f-11ea-9830-3ee270cc0a59.png)
-
-
 ### FCN Architecture :
+
+![image](https://user-images.githubusercontent.com/37708330/69012142-cb4d8b80-0972-11ea-9944-23f41529eeef.png)
+
+
+Encoders are usually a deep neural network such as VGG or ResNet and decoders upsamples the label results and matches with the image size. In this project VGG-16 network is used as a network and neccessary deconvolution layer and skip connections are implemented.
 
 ![image](https://user-images.githubusercontent.com/37708330/69011873-83793500-096f-11ea-95ab-5f637c02a2fb.png)
 
@@ -75,5 +77,8 @@ Skip Connections are used to explicitly copy features from earlier layers into l
 - One convolutional layer (1X1) with kernel 1 from VGG's layer 3.
 - The two layers above are added to create the second skip layer.
 - One deconvolutional layer with kernel 16 and stride 8 from the second skip layer.
+
+
+
 
 
