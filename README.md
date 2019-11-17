@@ -81,7 +81,7 @@ Encoders are usually a deep neural network such as VGG or ResNet and decoders up
 
 
 
-### Code Workflow of Code in main_cityscapes_dataset.py :
+### Code Workflow in main_cityscapes_dataset.py :
 
 1. Loads the global parameters including images from the directories. Downloads the VGG network and its weights.
 2. Constructs the FCN network using the loaded VGG net. Labels (label colors) are mapped to the last layer of the network.
@@ -89,3 +89,8 @@ Encoders are usually a deep neural network such as VGG or ResNet and decoders up
 4. Trains the network with training images and reports batch loss.
 5. After training till the necessary epochs, testing is executed.
 6. The final test image ouputs are saved to the directory.
+
+
+### Resource:
+
+I used these resources to learn more about [weight initialization](http://cs231n.github.io/neural-networks-2/#init) and [regularization](http://cs231n.github.io/neural-networks-2/#reg).
