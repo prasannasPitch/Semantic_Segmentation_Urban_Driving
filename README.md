@@ -11,7 +11,7 @@ In Autonomous Driving scenario, perception of environment plays a critical role 
 
 ### Approach of the Project :
 
-The objective of this project is to label the pixels of a road image using the Fully Convolutional Network (FCN) described in the [Fully Convolutional Networks for Semantic Segmentation](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf) by Jonathan Long, Even Shelhamer, and Trevor Darrel. The project is the implementation of the challenge posted by Udacity to perform semantic segmentation on <a href="https://www.cityscapes-dataset.com/" name="p2_code">cityscapes dataset.</a>
+The objective of this project is to label the pixels of a road image using the Fully Convolutional Network (FCN) described in the [Fully Convolutional Networks for Semantic Segmentation](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf) by Jonathan Long, Even Shelhamer, and Trevor Darrel. The project is the implementation of the challenge posted by Udacity to perform semantic segmentation on <a href="https://www.cityscapes-dataset.com/" name="p2_code">cityscapes dataset </a> 5,000 finely annotated images or 20,000 coarsely annotated images.
 
 
 
