@@ -81,7 +81,7 @@ Encoders are usually a deep neural network such as VGG or ResNet and decoders up
 
 
 
-###Code Workflow of Code in main_cityscapes_dataset.py :
+### Code Workflow of Code in main_cityscapes_dataset.py :
 
 1. Loads the global parameters including images from the directories. Downloads the VGG network and its weights.
 2. Constructs the FCN network using the loaded VGG net. Labels (label colors) are mapped to the last layer of the network.
