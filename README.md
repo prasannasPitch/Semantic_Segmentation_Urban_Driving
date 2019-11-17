@@ -46,7 +46,7 @@ However, if we increase the number of filters we can control the depth of the ou
 ![image](https://user-images.githubusercontent.com/37708330/69010152-da294380-095c-11ea-90a0-7c3a54a42bf2.png)
 
 
-#### Upsampling through Transposed Convolution (Deconvolution)
+#### Upsampling through Transposed Convolution (Deconvolution):
 
 <p align="justify">
 Transposed Convolutions help in upsampling the previous layer to a higher resolution or dimension. Upsampling is a classic signal processing technique which is often accompanied by interpolation. The term transposed can be confusing since we typicallly think of transposing as changing places, such as switching rows and columns of a matrix. In this case when we use the term transpose, we mean transfer to a different place or context. We can use a transposed convolution to transfer patches of data onto a sparse matrix, then we can fill the sparse area of the matrix based on the transferred information
@@ -65,7 +65,15 @@ Skip Connections are used to explicitly copy features from earlier layers into l
 
 ### FCN Architecture :
 
+![image](https://user-images.githubusercontent.com/37708330/69011786-7576e480-096e-11ea-9a87-d60ce12555ef.png)
 
-
+- One convolutional layer with kernel 1 from VGG's layer 7.
+- One deconvolutional layer with kernel 4 and stride 2 from the first convolutional layer.
+- One convolutional layer with kernel 1 from VGG's layer 4.
+- The two layers above are added to create the first skip layer.
+- One deconvolutional layer with kernel 4 and stride 2 from the first ship layer.
+- One convolutional layer with kernel 1 from VGG's layer 3.
+- The two layers above are added to create the second skip layer.
+- One deconvolutional layer with kernel 16 and stride 8 from the second skip layer.
 
 
