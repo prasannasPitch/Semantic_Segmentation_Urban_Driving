@@ -65,14 +65,14 @@ Skip Connections are used to explicitly copy features from earlier layers into l
 
 ### FCN Architecture :
 
-![image](https://user-images.githubusercontent.com/37708330/69011786-7576e480-096e-11ea-9a87-d60ce12555ef.png)
+![image](https://user-images.githubusercontent.com/37708330/69011873-83793500-096f-11ea-95ab-5f637c02a2fb.png)
 
-- One convolutional layer with kernel 1 from VGG's layer 7.
+- One convolutional layer (1X1) with kernel 1 from VGG's layer 7.
 - One deconvolutional layer with kernel 4 and stride 2 from the first convolutional layer.
-- One convolutional layer with kernel 1 from VGG's layer 4.
+- One convolutional layer (1X1) with kernel 1 from VGG's layer 4.
 - The two layers above are added to create the first skip layer.
 - One deconvolutional layer with kernel 4 and stride 2 from the first ship layer.
-- One convolutional layer with kernel 1 from VGG's layer 3.
+- One convolutional layer (1X1) with kernel 1 from VGG's layer 3.
 - The two layers above are added to create the second skip layer.
 - One deconvolutional layer with kernel 16 and stride 8 from the second skip layer.
 
