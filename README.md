@@ -22,6 +22,50 @@ Spatial information: Fully connected layer generally causes loss of spatial info
 
 Computational cost and representation power: There is also a distinction in terms of compute vs storage between convolutional layers and fully connected layers. For instance, in AlexNet the convolutional layers comprised of 90% of the weights (~representational capacity) but contributed only to 10% of the computation; and the remaining (10% weights => less representation power, 90% computation) was eaten up by fully connected layers. Thus usually researchers are beginning to favor having a greater number of convolutional layers, tending towards fully convolutional networks for everything.
 
-The fully convolutional net tries to learn representations and make decisions based on local spatial input - which is rightly needed in this case.
+The fully convolutional net tries to learn representations and make decisions based on local spatial input - which is rightly needed in this case. FCN achieves these information by integrating three special techniques.
+
+1. Linear 1X1 convolution.
+2. Upsampling through transposed convolution.
+3. Skip Connection
+
+#### Linear 1X1 Convolution :
+
+A 1x1 convolution can increase or decrease the number of effective kernels by doing a weighted sum of responses in a depth column at any location on the feature map. A depth column is a set of feature responses at the same position but on different feature maps. That is, at any given position of the input feature map, a depth column is a response vector of different kernels. You could use a convolution layer with larger kernel size, say 3x3, to reduce the number of feature maps, but a 1x1 layer gets the job done with less number of parameters.
+
+With a single filter of dimension 3x3x3 (depth of filter has to match input volume depth) we get as output 4x4x1 (assuming stride 1 and no padding). The key point to note here is the output is collapsed from depth 3 to depth 1 (granted width and height changed too but we could have kept that same as input by proper choice of padding of input).
+
+![image](https://user-images.githubusercontent.com/37708330/69010136-9b938900-095c-11ea-8eee-cadfbb248d50.png)
+
+
+Now instead of using a 3 x 3 x 3 filter, if we use a 1 x 1 x 3 (often called 1x1 since the depth is a variable and forced to match input volume depth - which is perhaps why it is so confusing), The output again has depth 1 as in previous case, except since we convolved with a 1x1 filter, the width and height of the input remains unchanged.
+
+![image](https://user-images.githubusercontent.com/37708330/69010144-b7972a80-095c-11ea-8e95-3c5fa7f068d7.png)
+
+However, if we increase the number of filters we can control the depth of the output. For instance, using two filters (each of depth 3) in the figure below , the output depth is 3.
+
+![image](https://user-images.githubusercontent.com/37708330/69010152-da294380-095c-11ea-90a0-7c3a54a42bf2.png)
+
+
+#### Upsampling through Transposed Convolution (Deconvolution)
+
+<p align="justify">
+Transposed Convolutions help in upsampling the previous layer to a higher resolution or dimension. Upsampling is a classic signal processing technique which is often accompanied by interpolation. The term transposed can be confusing since we typicallly think of transposing as changing places, such as switching rows and columns of a matrix. In this case when we use the term transpose, we mean transfer to a different place or context. We can use a transposed convolution to transfer patches of data onto a sparse matrix, then we can fill the sparse area of the matrix based on the transferred information
+ </p>
+
+![image](https://user-images.githubusercontent.com/37708330/69010251-350f6a80-095e-11ea-8771-c0369c397f15.png)
+
+#### Skip Connection:
+<p align="justify">
+
+Skip Connections are used to explicitly copy features from earlier layers into later layers. This prevents neural networks from having to learn identity functions if necessary. Usually, some information is captured in the initial layers and is required for reconstruction during the up-sampling done using the fully connected network layer. If we would not have used the skip architecture that information would have been lost (or should say would have turned too abstract for it to be used further). So an information that we have in the primary layers can be fed explicitly to the later layers using the skip architecture. The Vanishing Gradient problem occurs when the signal parsing of SGD (Stochastic Gradient Descent) or other forms of GD (Gradient Descent) becomes so small or the signal becomes so approximative small that the loss is neglected. skip architecture is a common solution to overcome it.
+ </p>
+
+![image](https://user-images.githubusercontent.com/37708330/69010415-e19e1c00-095f-11ea-9830-3ee270cc0a59.png)
+
+
+### FCN Architecture :
+
+
+
 
 
