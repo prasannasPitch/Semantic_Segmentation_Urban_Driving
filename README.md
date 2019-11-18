@@ -90,6 +90,9 @@ Encoders are usually a deep neural network such as VGG or ResNet and decoders up
 5. After training till the necessary epochs, testing is executed.
 6. The final test image ouputs are saved to the directory.
 
+### Video Result:
+
+Full Project Video : [Video Link](https://www.youtube.com/watch?v=cwzZaUdqGSU&feature=youtu.be)  
 
 ### Resource:
 
