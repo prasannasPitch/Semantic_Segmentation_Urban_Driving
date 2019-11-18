@@ -98,6 +98,10 @@ Encoders are usually a deep neural network such as VGG or ResNet and decoders up
 
 Full Project Video : [Video Link](https://www.youtube.com/watch?v=cwzZaUdqGSU&feature=youtu.be)  
 
+### Further Work:
+
+This is a novel approach to perform segmentation. But there is a lot of research going on regarding segmentation and new architectures are providing state of the art benchmarks. Particularly I found interesting papers like [RefineNet](https://arxiv.org/pdf/1611.06612.pdf), [Pyramid Scene Parsing Network](https://arxiv.org/pdf/1612.01105.pdf) and [https://arxiv.org/pdf/1611.08323.pdf](Full-Resolution Residual Networks)
+
 ### Resources:
 <p align="justify">
 
