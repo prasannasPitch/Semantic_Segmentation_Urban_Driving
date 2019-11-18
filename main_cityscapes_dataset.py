@@ -3,7 +3,7 @@ import tensorflow as tf
 import time
 
 
-## Global variables ##
+# Global variables
 KEEP_PROB = 0.8
 LEARNING_RATE = 1e-4
 testParameter = True

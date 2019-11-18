@@ -14,6 +14,7 @@ import os.path
 import shutil
 import zipfile
 
+# Label name and its corresponding color code
 Label = namedtuple('Label', ['name', 'color'])
 label_classes = [
 	Label('unlabelled', (0,0,0)),
@@ -47,6 +48,7 @@ label_classes = [
 	Label('bicycle', (119, 11, 32))
 	]
 
+# Loads data to the memory
 def load_data(image_paths, label_paths, data_type):
 	image_files = glob(image_paths + data_type + '/**/*.png')
 	label_files = glob(label_paths + data_type + '/**/*color.png')
@@ -62,6 +64,7 @@ def load_data(image_paths, label_paths, data_type):
 
 	return image_files, gt_images
 
+# Generate batch images for training
 def gen_batches_fn(img_shape, image_paths, label_paths, data_type):
 
 	def get_batches_fn(batch_size):
@@ -112,6 +115,7 @@ def gen_batches_fn(img_shape, image_paths, label_paths, data_type):
 
 	return get_batches_fn
 
+# Generate the segmented images using the original image and the mask (segments from the last layer)
 def gen_test_output(sess, logits, keep_prob, image_pl, image_test, gt_test, image_shape, label_colors):
 
     for f in image_test:
@@ -133,6 +137,7 @@ def gen_test_output(sess, logits, keep_prob, image_pl, image_test, gt_test, imag
 
         yield os.path.basename(image_file), np.array(init_img)
 
+# Save the output images
 def save_inference_samples(runs_dir, image_test, gt_test, sess, image_shape, logits, keep_prob, input_image, label_colors):
     # Make folder for current run
     output_dir = os.path.join(runs_dir, str(time.time()))
