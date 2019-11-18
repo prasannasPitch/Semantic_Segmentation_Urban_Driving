@@ -100,7 +100,7 @@ Full Project Video : [Video Link](https://www.youtube.com/watch?v=cwzZaUdqGSU&fe
 
 ### Further Work:
 
-This is a novel approach to perform segmentation. But there is a lot of research going on regarding segmentation and new architectures are providing state of the art benchmarks. Particularly I found interesting papers like [RefineNet](https://arxiv.org/pdf/1611.06612.pdf), [Pyramid Scene Parsing Network](https://arxiv.org/pdf/1612.01105.pdf) and [Full-Resolution Residual Networks](https://arxiv.org/pdf/1611.08323.pdf).
+This is a novel approach to perform segmentation. But there are major research going on regarding segmentation and new architectures are providing state of the art benchmarks. Particularly I found interesting papers like [RefineNet](https://arxiv.org/pdf/1611.06612.pdf), [Pyramid Scene Parsing Network](https://arxiv.org/pdf/1612.01105.pdf) and [Full-Resolution Residual Networks](https://arxiv.org/pdf/1611.08323.pdf).
 
 ### Resources:
 <p align="justify">
