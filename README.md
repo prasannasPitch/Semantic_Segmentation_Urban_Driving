@@ -1,7 +1,11 @@
 # Semantic_Segmentation_Urban_Driving
 
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/37708330/69022734-9108dc00-09bc-11ea-9f3a-2d9370b99524.gif">
+ </p>
 
-### Importance of Semantic Segmentation :
+
+### Motivation - Semantic Segmentation :
 
 <p align="justify">
 In Autonomous Driving scenario, perception of environment plays a critical role in determining the behaviour of the vehicle. It is important to know about the different methods which leaded up to semantic segmentation. Object detection is the technique that deals with distinguishing between objects in an image or video. While it is related to classification, it is more specific in what it identifies, applying classification to distinct objects in an image/video and using bounding boxes to tells us where each object is in an image/video. However, using just image detection gave the bounding box values in which the objects are confined. Rather segmentation could go one step further to distinguish objects in pixel level accuracy. The models created by image classification/recognition architectures gives the output of which class is the dominant object class in the image. Instead of predicting a probability distribution for an entire image, the image is divided into several blocks and each block is assigned its own probability distribution. This block-wise assigning goes to pixel-levels and each pixel is classified. For each pixel in the image, the network is trained to predict which class the pixel belongs to. This allows the network not only to identify several object classes in the image but also to determine the location of the objects.
@@ -94,6 +98,8 @@ Encoders are usually a deep neural network such as VGG or ResNet and decoders up
 
 Full Project Video : [Video Link](https://www.youtube.com/watch?v=cwzZaUdqGSU&feature=youtu.be)  
 
-### Resource:
+### Resources:
+<p align="justify">
 
-I used these resources to learn more about [weight initialization](http://cs231n.github.io/neural-networks-2/#init) and [regularization](http://cs231n.github.io/neural-networks-2/#reg).
+Main inspiration of this project comes from  [Fully Convolutional Networks for Semantic Segmentation](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). I used these resources to learn more about [weight initialization](http://cs231n.github.io/neural-networks-2/#init) and [regularization](http://cs231n.github.io/neural-networks-2/#reg).
+ </p>
